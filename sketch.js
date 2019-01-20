@@ -67,6 +67,10 @@ function draw() {
   }
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
 function addSnow(){
   for (let i =0; i<50; i++){
     snowflakes.push(new Snowflake());
@@ -76,7 +80,7 @@ function addSnow(){
 function startScreen(){
   background(0);
   fill(255);
-  textSize(32);
+  textSize(height*0.08);
   text("Cliquez pour commencer.", width/3,height/2,width/3, height/4);
 }
 
@@ -109,7 +113,7 @@ function reveil(){
   if (time<200){
     fill(255,time+55);
     textFont("Courrier");
-    textSize(32);
+    textSize(height*0.04);
     text("Instant cherche éternité pour former un nouvel espace.", width/3,height/2,width/3, height/4);
     time+=1;
   } else{
@@ -472,7 +476,7 @@ function final(){
   }else {
     background(0);
     fill(255);
-    textSize(40);
+    textSize(height*0.1);
     text("Fin", width/2,height/2);
 
   }
@@ -566,7 +570,7 @@ function quest(option1, option2){
   let y = height*0.25;
   let x = width/2;
   let w = width*0.15;
-  let h = height/5;
+  let h = height*0.15;
   fill(120);
   rect(x-w-5,y-5,w+10, h+10,20);
   rect(x+15-5,y-5,w+10, h+10,20);
@@ -584,7 +588,7 @@ function quest(option1, option2){
   rect(x+15,y,w, h,20);
   fill(255);
   textFont('Arial');
-  textSize(20);
+  textSize(h*0.2);
   text(option1, x-w+10, y+10, w-20, h-20);
   text(option2, x+15+10, y+10, w-20, h-20);
 }
@@ -605,11 +609,11 @@ function textbox(n, t){
   rect(x,y,w, h,20);
   fill(255);
   textFont('Arial');
-  textSize(28);
+  textSize(h*0.2);
   text(n, x+10, y+10, w-20, h-20);
   fill(255);
   textFont("Courrier");
-  textSize(20);
+  textSize(h*0.15);
   text(t, x+10, y+52, w-20, h-20);
 }
 
